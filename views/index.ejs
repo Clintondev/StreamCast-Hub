@@ -1,0 +1,28 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StreamCast Hub</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>StreamCast Hub</h1>
+  
+  <div class="wave-container">
+    <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+      <path id="wave" d="M0,100 C300,200 900,0 1200,100 L1200,200 L0,200 Z"></path>
+    </svg>
+  </div>
+
+  <ul>
+    <% radios.forEach(radio => { %>
+      <li>
+        <a href="/<%= radio.path %>"><%= radio.name %></a> -
+        <a href="/<%= radio.path %>.m3u">Baixar .m3u</a>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
